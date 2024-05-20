@@ -1,27 +1,40 @@
-// import { useEffect } from 'react'
 import "../src/App.css"
-import "./utils/Fetch_data.js"
 import Navbar from './component/Navbar'
 import {  BrowserRouter, } from 'react-router-dom'
-import Home from './component/Home'
 import Recipe from './component/Recipe'
 import Footer from './component/Footer.js'
 import AdView from './component/AdView.js'
 import About from './component/About.js'
-
-
-// useEffect(() => {
-//   FetchData()
-// }, [])
+import { useEffect, useState } from "react"
+import Home from "./component/Home.js"
 
 
 const App = () => {
+
+  const [recipes, setRecipes] = useState([])
+  const [selectedRecipes] = useState('')
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/recipes')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setRecipes(data);
+      });
+  }, []);
+
+  const filteredRecipes = selectedRecipes
+  ? recipes.filter((product) => (product as { categories: string }).categories === selectedRecipes)
+  : recipes;
+
   return (
-    <BrowserRouter basename=''>
+    <BrowserRouter>
       <div className='bg-base-100 text-base-content'>
         <Navbar />
         <Home />
-        <Recipe/>
+        <Recipe meals={filteredRecipes}/>
         <AdView />
         <About />
         <Footer />
