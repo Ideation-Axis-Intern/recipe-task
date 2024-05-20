@@ -5,7 +5,7 @@ import { IoFastFood } from 'react-icons/io5';
 
 export default function Nav (){
     return (
-        <nav className="fixed top-0 left-0 navbar bg-base-300 bg-opacity-50 backdrop-blur-lg justify-between py-3 border-b-1 shadow-md w-full">
+        <nav className="fixed top-0 left-0 navbar bg-base-300 z-50 bg-opacity-50 backdrop-blur-lg justify-between py-3 border-b-1 shadow-md w-full">
             <div className=' flex container px-4 mx-auto relative justify-between items-center text-sm'>
                 <div className="flex items-center flex-shrink-0">
                     <IoFastFood className="w-9 mr-1 h-8"/>
