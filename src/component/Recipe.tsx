@@ -28,19 +28,20 @@ interface Meal {
     ingredients: [],
     tags: [],
     instructions: [],
-    prepTimeMinutes: number
-
+    prepTimeMinutes: number,
   }
-  
+
   interface RecipeProps {
     meals: Meal[];
   }
 
 const Recipe: React.FC<RecipeProps> = ({ meals }) => {
+
   const [showAll, setShowAll] = useState<boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [selectedRecipe, setSelectedRecipe] = useState<Meal | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
+ 
   
     const handleShowAll = () => {
       setShowAll(true)
@@ -68,6 +69,7 @@ const Recipe: React.FC<RecipeProps> = ({ meals }) => {
     const filteredMeals = meals.filter(meal =>
       meal.name.toLowerCase().includes(searchQuery.toLowerCase())
     )
+
     const renderMeals = () => {
         if (filteredMeals.length === 0) {
           return (
@@ -101,8 +103,8 @@ const Recipe: React.FC<RecipeProps> = ({ meals }) => {
       return (
         <div className='lg:my-2 py-14' id='recipe'>
           <div className='text-center px-6 md:px-12'>
-            <h1 className='text-3xl font-bold tracking-wider'>Popular <span className='text-yellow-500'>Recipes</span> You Can't Miss</h1>
-            <p className='text-base-content px-4 sm:px-6 md:px-8 sm text-sm md:text-lg font-semibold'>Must-try recipe! Delicious, easy, and loved by all. Give it a try tonight! Bon appetit!</p>
+            <h1 className='text-3xl font-bold tracking-wider'>Popular <span className='text-yellow-500'>Recipes</span> Available</h1>
+            <p className='text-base-content px-4 sm:px-6 md:px-8 sm text-sm md:text-lg font-semibold'>Your recipes Hub, find that delicious meal you tasted...</p>
           </div>
     
           <div className='flex justify-center my-10 gap-1 items-center'>

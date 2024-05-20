@@ -8,9 +8,7 @@ import About from './component/About.js'
 import { useEffect, useState } from "react"
 import Home from "./component/Home.js"
 
-
 const App = () => {
-
   const [recipes, setRecipes] = useState([])
   const [selectedRecipes] = useState('')
 

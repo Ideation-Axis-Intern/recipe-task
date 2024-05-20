@@ -11,7 +11,7 @@ const Home = () => {
                     Unleash Flavorful <span className='text-yellow-500/80'>Adventures</span> : Your Culinary Journey <span className='text-yellow-500/80'>Starts Here!</span>
                   </h1>
                   <p className='italic font-medium justify-evenly'>
-                    Welcome to a world where every meal is an adventure! At <span className='text-yellow-600'>Recipe Whisperer</span>, we believe that cooking should be a joyous experience, filled with tantalizing 
+                    At <span className='text-yellow-600'>Recipe Whisperer</span>, we believe that cooking should be a joyous experience, filled with tantalizing 
                     flavors and nourishing ingredients. Our curated collection of recipes is designed to delight your taste buds with a variety of cuisines from around the globe. 
                     But it’s not just about taste; our recipes are  <span className="underline text-yellow-600">crafted with your health in mind</span>, using fresh, wholesome ingredients to help you feel your best. 
                     Whether you're a seasoned chef or just starting out, our step-by-step guides and expert tips will help you grow your culinary skills and confidence in the kitchen. 
