@@ -10,7 +10,7 @@
   text-align: center;
 }
 /* smooth scroll on page */
-html {
+* {
   scroll-behavior: smooth;
 }
 
